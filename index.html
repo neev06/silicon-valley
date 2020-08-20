@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Multiplayer Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    <script src="p5.play.js"></script>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCxhKyIXi0tHmzNNazo9mulpjGezGLMFfo",
+    authDomain: "start-f0c8e.firebaseapp.com",
+    databaseURL: "https://start-f0c8e.firebaseio.com",
+    projectId: "start-f0c8e",
+    storageBucket: "start-f0c8e.appspot.com",
+    messagingSenderId: "1009103947222",
+    appId: "1:1009103947222:web:36386f469e0c0620b95077"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+   
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+
+    <script>
+
+      function showNotification(){
+        const notification=new Notification("New message from Neev!",{
+body:"Hey mate !! please give us a feedback to save environment!"
+        })
+        notification.onclick=(e)=>{
+window.location.href="https://editor.p5js.org/neev06/full/PfE0caekt"
+        }
+      }
+    
+      console.log(Notification.permission)
+
+      if(Notification.permission==="granted"){
+showNotification();
+
+      }else if(Notification.permission !=="denied"){
+
+        Notification.requestPermission().then(permission=>{
+          if(permission==="granted"){
+            showNotification();
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
